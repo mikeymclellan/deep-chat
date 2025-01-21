@@ -45,6 +45,7 @@ export class MessagesBase {
     this.elementRef = MessagesBase.createContainerElement();
     this.messageStyles = Legacy.processMessageStyles(deepChat.messageStyles);
     this._remarkable = RemarkableConfig.createNew(deepChat.remarkable);
+    if (deepChat.remarkableInit) deepChat.remarkableInit(this._remarkable);
     this._avatars = deepChat.avatars;
     this._names = deepChat.names;
     this._onMessage = FireEvents.onMessage.bind(this, deepChat);

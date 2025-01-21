@@ -39,6 +39,7 @@ import {Connect} from './types/connect';
 import {Avatars} from './types/avatars';
 import {Names} from './types/names';
 import {Demo} from './types/demo';
+import { Remarkable } from 'remarkable';
 
 // TO-DO - ability to export files
 // TO-DO - perhaps chat bubbles should start at the bottom which would allow nice slide up animation (optional)
@@ -144,6 +145,9 @@ export class DeepChat extends InternalHTML {
 
   @Property('object')
   remarkable?: RemarkableOptions;
+
+  @Property('function')
+  remarkableInit?: (remarkable: Remarkable) => void;
 
   @Property('boolean')
   focusMode?: FocusMode;
