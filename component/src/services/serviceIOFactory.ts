@@ -38,6 +38,8 @@ export class ServiceIOFactory {
   // this should only be called when no _activeService is set or is demo as otherwise we don't want to reconnect
   public static create(deepChat: DeepChat): ServiceIO {
     const {directConnection, connect, demo, webModel} = deepChat;
+
+        console.log('ServiceIOFactory.create', connect);
     if (webModel) {
       return new WebModel(deepChat);
     }
